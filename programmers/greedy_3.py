@@ -1,24 +1,7 @@
 '''
-def solution(number, k):
-    answer = ''
-    nums = [int(i) for i in number]
-    ans = nums
-    t = 0
-    
-    while True:
-        if k == 0:
-            break
-        m = nums[t:k + t].index(max(nums[t:k + t]))
-        if m == 0:
-            t = t + 1
-            continue
-        else :
-            nums = nums[m:]
-        k = k - m + 1
-        
-    return ",".join(nums)
+max() 를 사용하는 경우 시간초과가 발생했다.
+max() 를 사용하지않고 앞뒤 비교를 하는 알고리즘으로 변경
 '''
-
 def solution(number, k):
     answer = ''
     
