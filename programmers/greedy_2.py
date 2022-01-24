@@ -15,3 +15,6 @@ def solution(name):
         min_move = min(min_move, i + i + len(name) - next)
     answer += min_move
     return answer
+
+name = input()
+print(solution(name))
