@@ -1,19 +1,29 @@
+from audioop import reverse
+
+
 def solution(people, limit):
     people.sort(reverse=True)
-    people.append(0)
-
-    print(people)
-    '''
-    while True:
-        if people[-1] == 0:
-            break
-        
-       '''     
+    
     answer = 0
-    return answer
+    lp = 0
+    rp = len(people) - 1
+    print(people)
+    
+    while True:
+        if lp >= rp:
+            return answer
+        s = people[lp]
+        while True:
+            print("lp : ", lp, "rp : ", rp)
+            s = s + people[rp]
+            if s > limit or lp == rp:
+                break
+            rp = rp - 1
+        lp = lp + 1
+        answer = answer + 1
 
 
-p = [70, 50, 80, 50]
-l = 100
+p = [40, 40, 40]
+l = 120
 
 print(solution(p, l))
