@@ -11,7 +11,6 @@ int militaryNodeNumber;
 int **result;
 int **board;
 int INF = 0x7FFFFFFF;
-int mINF = 0x70000000;
 int directionX[4] = {1, -1, 0, 0};
 int directionY[4] = {0, 0, 1, -1};
 
