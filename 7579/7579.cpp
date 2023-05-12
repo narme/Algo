@@ -25,7 +25,7 @@ void input(){
 
 int solve(){
     for(int i = 0; i < n; i++){
-        for(int j = cost_sum; j > 0; j--){
+        for(int j = cost_sum; j >= 0; j--){
             if(j - cost[i] >= 0)dp[j] = max(dp[j], dp[j-cost[i]] + memory[i]);
         }
     }
