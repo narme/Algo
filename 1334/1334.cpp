@@ -1,7 +1,7 @@
 #include <iostream>
 using namespace std;
  
-void printArray(int arr[], int n)
+void print(int arr[], int n)
 {
     for(int i = 0; i < n; i++)cout << arr[i];
 }
@@ -16,10 +16,10 @@ bool AreAll9s(int* num, int n )
     return true;
 }
  
-void generateNextPalindromeUtil (int num[], int n )
+void palindrome(int num[], int n)
 {
     int mid = n / 2;
-    bool leftsmaller = false;
+    bool smaller = false;
  
     int i = mid - 1;
     int j = (n % 2) ? mid + 1 : mid;
@@ -29,7 +29,7 @@ void generateNextPalindromeUtil (int num[], int n )
  
 
     if (i < 0 || num[i] < num[j])
-        leftsmaller = true;
+        smaller = true;
  
     while (i >= 0)
     {
@@ -38,7 +38,7 @@ void generateNextPalindromeUtil (int num[], int n )
         i--;
     }
 
-    if (leftsmaller == true)
+    if (smaller == true)
     {
         int carry = 1;
         i = mid - 1;
@@ -75,8 +75,8 @@ void solve(int num[], int n)
     }
     else
     {
-        generateNextPalindromeUtil(num, n);
-        printArray (num, n);
+        palindrome(num, n);
+        print (num, n);
     }
 }
  
