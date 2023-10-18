@@ -41,6 +41,7 @@ int searchCycle(int cv, int prev){
             return from;
         }
     }
+    //끝일시 idx 감소 = 삭제 효과
     idx--;
     return -1;
 }
